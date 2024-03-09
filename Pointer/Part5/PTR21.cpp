@@ -45,5 +45,37 @@ next(P) = Nil;
 next(P) = First;
 First = P;
 printf("%d \n", info(next(next(First))));
+
+
+/* Insert awal */
+P = (address) malloc(sizeof (ElmtList));
+info(P) = 40;
+next(P) = Nil;
+next(P) = First;
+First = P;
+printf("Insert Awal = %d \n", info(First));
+
+/* Insert akhir */
+P = (address) malloc(sizeof (ElmtList));
+info(P) = 50;
+next(P) = Nil;
+next(next(next(next(First)))) = P;
+printf("Insert Akhir = %d \n", info(next(next(next(next(First))))));
+
+/* Insert tengah */
+P = (address) malloc(sizeof (ElmtList));
+info(P) = 60;
+next(P) = Nil;
+next(P) = next(Q);
+next(Q) = P;
+
+printf("Insert Tengah = %d \n", info(next(next(next(First)))));
+
+/* Print semua List */
+printf("\nList:\n");
+while (First != Nil) {
+	printf("%d \n", info(First));
+	First = next(First);
+}
 return 0;
 }
